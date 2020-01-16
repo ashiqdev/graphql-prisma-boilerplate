@@ -8,6 +8,8 @@ generate:
     output: ../src/generated/prisma-client/
   - generator: graphql-schema
     output: ../src/generated/prisma.graphql
+seed:
+  run: node prisma/seed/index.js
 hooks:
     post-deploy:
       - prisma generate
