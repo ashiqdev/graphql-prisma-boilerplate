@@ -1,7 +1,9 @@
-const { GraphQLServer } = require("graphql-yoga");
+const { GraphQLServer, PubSub } = require("graphql-yoga");
 
 const resolvers = require("../resolvers");
 const { prisma } = require("../generated/prisma-client");
+
+const pubsub = new PubSub();
 
 function createServer() {
   return new GraphQLServer({
@@ -10,7 +12,7 @@ function createServer() {
     resolverValidationOptions: {
       requireResolversForResolveType: false
     },
-    context: req => ({ ...req, prisma })
+    context: req => ({ ...req, prisma, pubsub })
   });
 }
 

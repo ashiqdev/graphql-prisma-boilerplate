@@ -1,9 +1,83 @@
 # import * from './generated/prisma.graphql'
 
+# enum UserOrderByInput {
+#   id_ASC
+#   id_DESC
+#   name_ASC
+#   name_DESC
+#   email_ASC
+#   email_DESC
+#   password_ASC
+#   password_DESC
+#   emailVerified_ASC
+#   emailVerified_DESC
+#   emailToken_ASC
+#   emailToken_DESC
+#   emailTokenExpiry_ASC
+#   emailTokenExpiry_DESC
+#   resetToken_ASC
+#   resetToken_DESC
+#   resetTokenExpiry_ASC
+#   resetTokenExpiry_DESC
+#   createdAt_ASC
+#   createdAt_DESC
+#   updatedAt_ASC
+#   updatedAt_DESC
+# }
+
+type User {
+  id: ID!
+  email: String!
+  password: String!
+  name: String!
+  posts: [Post!]!
+  comments: [Comment!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type AuthPayLoad {
+  token: String
+  user: User!
+}
+
+type Message {
+  message: String!
+}
+
 type Mutation {
-  createPost(title: String!, body: String!, published: Boolean!): Post!
+  signup(name: String!, email: String!, password: String!): Message!
+  verifyEmail(emailToken:String! email:String): AuthPayLoad!
+  signin(email:String! password:String!): AuthPayLoad!
+  sendVerification(email:String!): Message!
+  requestReset(email:String!): Message!
+  resetPassword(resetToken:String! password:String! confirmPassword:String!):Message!
+  updateUser(name:String email:String):User!
+  deleteUser: User!
+
+  createPost(
+    title: String!
+    body: String!
+    published: Boolean!
+  ): Post!
+
+  updatePost(id:ID!, title:String, body:String, published:Boolean):Post!
+  deletePost(id:ID!):Post!
+
+  createComment(text:String!, postId:ID!): Comment!
+  updateComment(id:ID!, text:String!):Comment!
+  deleteComment(id:ID!):ID!
+
 }
 
 type Query {
+  users(query: String, first: Int, skip: Int, after:String): [User!]!
+  user(id: ID!): User!
+  # public posts (published)
+  posts(query: String, first:Int, skip:Int, after:String): [Post!]!
+  # all published and unpublished post of a user
+  myPosts(query: String, first:Int, skip:Int, after:String): [Post!]!
+  comments(query:String, first:Int, skip:Int, after:String): [Comment!]!
   post(id: ID!): Post!
+  comment(id:ID!): Comment!
 }

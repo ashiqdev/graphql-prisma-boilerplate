@@ -1,0 +1,28 @@
+{
+  "name": "graphql-with-prisma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ashiqdev/graphql-prisma-boilerplate.git",
+  "author": "ashiqdev <ashikduit.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "reset:db": "prisma reset",
+    "admin:db": "prisma admin",
+    "deploy": "prisma deploy"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "graphql-tag": "^2.10.1",
+    "handlebars": "^4.5.3",
+    "handlebars-loader": "^1.7.1",
+    "ical-generator": "^1.9.2",
+    "ics": "^2.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "nodemailer": "^6.4.2",
+    "nodemon": "^2.0.2"
+  }
+}
