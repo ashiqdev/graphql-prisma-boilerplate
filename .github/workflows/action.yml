@@ -1,0 +1,31 @@
+name: "Github action Test"
+on:
+  pull_request:
+    branches:
+      - auth
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Install node"
+        uses: actions/setup-node@v1
+      - name: "Install mocha"
+        run: npm install -g mocha
+      - name: "Install yarn"
+        run: npm install -g yarn
+      - name: "Install deps"
+        run: yarn
+      - name: "build docker-compose file"
+        run: docker-compose up
+      - name: "deploy prisma"
+        run: yarn deploy
+      - name: "run test cases"
+        run: yarn test
+        env:
+          PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
+          PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
+          API_PORT: ${{API_PORT}}
+          DASHBOARD_URL: ${{DASHBOARD_URL}}
+          EMAIL: ${{EMAIL}}
+          PASSWORD: ${{PASSWORD}}

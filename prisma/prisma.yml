@@ -2,7 +2,6 @@ endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
 secret: ${env:PRISMA_SECRET}
 
-
 generate:
   - generator: javascript-client
     output: ../src/generated/prisma-client/
@@ -11,5 +10,5 @@ generate:
 seed:
   run: node prisma/seed/index.js
 hooks:
-    post-deploy:
-      - prisma generate
+  post-deploy:
+    - prisma generate
