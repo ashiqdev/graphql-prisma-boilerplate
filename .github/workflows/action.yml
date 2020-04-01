@@ -15,7 +15,7 @@ jobs:
       - name: "Install yarn"
         run: npm install -g yarn
       - name: "Install prisma"
-        run: npm install -g prisma-cli 
+        run: npm install -g prisma-cli
       - name: "Install deps"
         run: yarn
       - name: "build docker-compose file"
@@ -23,7 +23,7 @@ jobs:
       - name: "deploy prisma"
         run: yarn deploy
       - name: "run test cases"
-        run: yarn test
+        run: yarn test:action
         env:
           PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
           PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}

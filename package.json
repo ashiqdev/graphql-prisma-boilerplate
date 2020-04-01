@@ -11,7 +11,9 @@
     "admin:db": "prisma admin",
     "deploy": "prisma deploy",
     "seed:db": "node prisma/seed/index.js",
-    "test": " dotenv -e .env yarn seed:db && mocha src/test/bdd"
+    "test": " dotenv -e .env yarn seed:db && mocha src/test/bdd",
+    "test:action": "yarn seed:db && mocha src/test/bdd"
+
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
