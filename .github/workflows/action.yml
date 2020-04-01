@@ -17,7 +17,7 @@ jobs:
       - name: "Install deps"
         run: yarn
       - name: "build docker-compose file"
-        run: docker-compose up
+        run: docker-compose up -d
       - name: "deploy prisma"
         run: yarn deploy
       - name: "run test cases"
