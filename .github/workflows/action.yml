@@ -2,7 +2,7 @@ name: "Github action Test"
 on:
   pull_request:
     branches:
-      - test-auth
+      - auth
 jobs:
   test:
     runs-on: ubuntu-latest
