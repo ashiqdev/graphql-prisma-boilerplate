@@ -1,16 +1,14 @@
 const bcrypt = require("bcryptjs");
 const path = require("path");
-const moment = require('moment');
+const moment = require("moment");
 
-
-const {sendEmailVerification} = require('../mail_templates/index');
-
+const { sendEmailVerification } = require("../mail_templates/index");
 
 const fragment = require("./fragment");
 const { createHash, transport, signToken, loginChecker } = require("../common");
 const { verifyEmailTemplate } = require("../mail_templates");
+const { prisma } = require("../../generated/prisma-client");
 const { ADMIN_MAIL } = process.env;
-
 
 const Mutation = {
   async signup(parent, args, ctx) {
@@ -64,11 +62,10 @@ const Mutation = {
 
   async signin(parent, args, ctx) {
     const { email, password } = args;
-    const user = await ctx.prisma.user({ email });
+    const user = await prisma.user({ email });
     if (!user) {
       throw new Error("No user found with this email");
     }
-
 
     if (!user.emailVerified) {
       throw new Error("You have to verify your email first");

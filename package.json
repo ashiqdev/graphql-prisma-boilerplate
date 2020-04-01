@@ -9,20 +9,28 @@
     "start": "nodemon src/index.js",
     "reset:db": "prisma reset",
     "admin:db": "prisma admin",
-    "deploy": "prisma deploy"
+    "deploy": "prisma deploy",
+    "seed:db": "node prisma/seed/index.js",
+    "test": " dotenv -e .env yarn seed:db && mocha src/test/bdd"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql-tag": "^2.10.1",
+    "graphql-yoga": "^1.18.3",
     "handlebars": "^4.5.3",
     "handlebars-loader": "^1.7.1",
     "ical-generator": "^1.9.2",
     "ics": "^2.18.0",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^7.1.1",
     "moment": "^2.24.0",
     "nodemailer": "^6.4.2",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "prisma-client-lib": "^1.34.10"
   }
 }

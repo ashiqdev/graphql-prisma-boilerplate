@@ -14,6 +14,6 @@ server.start(
     debug: true
   },
   listener => {
-    console.log(`Server is listening ion port ${listener.port}`);
+    console.log(`Server is listening on port ${listener.port}`);
   }
 );
