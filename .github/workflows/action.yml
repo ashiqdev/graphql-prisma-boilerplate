@@ -2,7 +2,7 @@ name: "Github action Test"
 on:
   pull_request:
     branches:
-      - auth
+      - test-auth
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         env:
           PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
           PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
-          API_PORT: ${{API_PORT}}
-          DASHBOARD_URL: ${{DASHBOARD_URL}}
-          EMAIL: ${{EMAIL}}
-          PASSWORD: ${{PASSWORD}}
+          API_PORT: ${{secrets.API_PORT}}
+          DASHBOARD_URL: ${{secrets.DASHBOARD_URL}}
+          EMAIL: ${{secrets.EMAIL}}
+          PASSWORD: ${{sectets.PASSWORD}}
