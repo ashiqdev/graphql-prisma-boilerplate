@@ -28,4 +28,4 @@ jobs:
           API_PORT: ${{secrets.API_PORT}}
           DASHBOARD_URL: ${{secrets.DASHBOARD_URL}}
           EMAIL: ${{secrets.EMAIL}}
-          PASSWORD: ${{sectets.PASSWORD}}
+          PASSWORD: ${{secrets.PASSWORD}}
