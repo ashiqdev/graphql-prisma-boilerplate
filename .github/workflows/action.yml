@@ -31,3 +31,4 @@ jobs:
           DASHBOARD_URL: ${{secrets.DASHBOARD_URL}}
           EMAIL: ${{secrets.EMAIL}}
           PASSWORD: ${{secrets.PASSWORD}}
+          EXPECTED_VALUE: ${{secrets.EXPECTED_VALUE}}
