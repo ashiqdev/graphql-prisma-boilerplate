@@ -28,7 +28,7 @@ const Mutation = {
       emailToken,
       emailTokenExpiry
     });
-    return sendEmailVerification(newUser);
+    // return sendEmailVerification(newUser);
   },
 
   async verifyEmail(parent, args, ctx) {
