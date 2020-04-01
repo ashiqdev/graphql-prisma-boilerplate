@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-node@v1
       - name: "Install mocha"
         run: npm install -g mocha
-      - uses: "Install yarn"
+      - name: "Install yarn"
         run: npm install -g yarn
       - name: "Install deps"
         run: yarn
