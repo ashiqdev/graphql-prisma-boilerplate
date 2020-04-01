@@ -12,7 +12,7 @@ const { ADMIN_MAIL } = process.env;
 
 const Mutation = {
   async signup(parent, args, ctx) {
-    const emailTaken = await ctx.prisma.$exists.user({ email: args.email });
+    const emailTaken = await prisma.$exists.user({ email: args.email });
     if (emailTaken) {
       throw new Error("Email is already taken");
     }
@@ -22,7 +22,7 @@ const Mutation = {
     const emailToken = await createHash();
     const emailTokenExpiry = Date.now() + 3600000;
 
-    const newUser = await ctx.prisma.createUser({
+    const newUser = await prisma.createUser({
       ...data,
       password,
       emailToken,
@@ -67,9 +67,9 @@ const Mutation = {
       throw new Error("No user found with this email");
     }
 
-    if (!user.emailVerified) {
-      throw new Error("You have to verify your email first");
-    }
+    // if (!user.emailVerified) {
+    //   throw new Error("You have to verify your email first");
+    // }
 
     const passwordValid = await bcrypt.compare(password, user.password);
 

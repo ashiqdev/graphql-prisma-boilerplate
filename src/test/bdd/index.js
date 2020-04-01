@@ -10,7 +10,7 @@ dotenv.config({ path: envPath });
 
 chai.should();
 
-const { signin } = require("../../resolvers/user/mutation");
+const { signin, signup } = require("../../resolvers/user/mutation");
 const {
   prisma: { deleteManyUsers }
 } = require("../../../src/generated/prisma-client");
@@ -24,13 +24,23 @@ const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce((a, c) => a + c);
 
 describe("Test Authentication", () => {
-  it("should sign in the user", () => {
-    const args = {
-      email: process.env.EMAIL,
-      password: process.env.PASSWORD
+  it("should sign up the user", () => {
+    const signUpargs = {
+      name: "Naimur Rahman",
+      email: "test@test.com",
+      password: "123456"
     };
 
-    return signin(null, args).should.be.fulfilled;
+    return signup(null, signUpargs).should.be.fulfilled;
+  });
+
+  it("should sign in the user", () => {
+    const signInargs = {
+      email: "test@test.com",
+      password: "123456"
+    };
+
+    return signin(null, signInargs).should.be.fulfilled;
   });
 
   it("should be an array", () => {
