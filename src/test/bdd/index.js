@@ -57,7 +57,7 @@ describe("Test Authentication", () => {
     expect(sum).to.equal(15);
   });
 
-  after(async () => {
-    await deleteManyUsers();
-  });
+  // after(async () => {
+  //   await deleteManyUsers();
+  // });
 });
