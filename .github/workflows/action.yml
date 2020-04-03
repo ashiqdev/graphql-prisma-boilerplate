@@ -11,7 +11,7 @@ jobs:
       - name: "Install node"
         uses: actions/setup-node@v1
       - name: "Install global packages"
-        run: npm i -g mocha yarn
+        run: npm i -g mocha yarn prisma
 
       - name: "up docker-compose file"
         run: docker-compose up -d
