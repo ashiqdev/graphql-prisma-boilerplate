@@ -14,7 +14,7 @@ jobs:
         run: npm i -g mocha yarn prisma
 
       - name: "up docker-compose file"
-        run: docker-compose up -d
+        run: docker-compose -f docker-compose.yml up -d
       - name: "deploy prisma"
         run: yarn deploy
       - name: "seed database"
