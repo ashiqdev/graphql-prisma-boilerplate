@@ -15,6 +15,8 @@ jobs:
 
       - name: "up docker-compose file"
         run: docker-compose -f docker-compose.yml up -d
+      - name: "install deps"
+        run: yarn install
       - name: "deploy prisma"
         run: yarn deploy
       - name: "seed database"
