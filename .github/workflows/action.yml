@@ -22,5 +22,5 @@ jobs:
         env:
           PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
           PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
-          EMAIL: ${{EMAIL}}
-          PASSWORD: ${{PASSWORD}}
+          EMAIL: ${{secrets.EMAIL}}
+          PASSWORD: ${{secrets.PASSWORD}}
