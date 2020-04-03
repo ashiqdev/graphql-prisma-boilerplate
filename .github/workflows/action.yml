@@ -22,7 +22,5 @@ jobs:
         env:
           PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
           PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
-          API_PORT: ${{API_PORT}}
-          DASHBOARD_URL: ${{DASHBOARD_URL}}
           EMAIL: ${{EMAIL}}
           PASSWORD: ${{PASSWORD}}
