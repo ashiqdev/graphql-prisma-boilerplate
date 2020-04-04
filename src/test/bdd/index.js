@@ -3,6 +3,8 @@ const chaiHttp = require("chai-http");
 const { expect } = require("chai");
 chai.use(require("chai-as-promised"));
 
+chai.use(chaiHttp);
+
 const dotenv = require("dotenv");
 const path = require("path");
 const envPath = path.resolve("./.env");
