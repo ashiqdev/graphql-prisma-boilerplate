@@ -13,7 +13,6 @@
     "seed:db": "node prisma/seed/index.js",
     "test": " dotenv -e .env yarn seed:db && mocha src/test/bdd",
     "test:action": "mocha src/test/bdd"
-
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -34,6 +33,7 @@
     "moment": "^2.24.0",
     "nodemailer": "^6.4.2",
     "nodemon": "^2.0.2",
-    "prisma-client-lib": "^1.34.10"
+    "prisma-client-lib": "^1.34.10",
+    "supertest": "^4.0.2"
   }
 }
