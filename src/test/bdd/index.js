@@ -10,7 +10,6 @@ const envPath = path.resolve("./.env");
 
 dotenv.config({ path: envPath });
 
-chai.should();
 chai.expect();
 
 const { signin } = require("../../resolvers/user/mutation");
@@ -32,15 +31,15 @@ describe("Test Authentication", () => {
   //   return signin(null, args).should.be.fulfilled;
   // });
 
-  it("check if prisma server is open or not", done => {
-    chai
-      .request("http://localhost:4466")
-      .get("/")
-      .end((err, res) => {
-        res.status.should.equal(200);
-        done();
-      });
-  });
+  // it("check if prisma server is open or not", done => {
+  //   chai
+  //     .request("http://localhost:4466")
+  //     .get("/")
+  //     .end((err, res) => {
+  //       res.status.should.equal(200);
+  //       done();
+  //     });
+  // });
 
   it("should be an array", () => {
     expect(["1", "2", "3", "4", "5"])
