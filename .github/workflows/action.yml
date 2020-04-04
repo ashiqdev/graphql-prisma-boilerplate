@@ -11,13 +11,13 @@ jobs:
       - name: "Install node"
         uses: actions/setup-node@v1
       - name: "Install global packages"
-        run: npm i -g mocha yarn prisma-cli
+        run: npm i -g mocha yarn prisma-cli wait-port
       - name: "install deps"
         run: yarn install
       - name: "up docker-compose file"
         run: docker-compose -f docker-compose.yml up -d
       - name: "deploy prisma"
-        run: yarn deploy
+        run: wait-port 4466 && yarn deploy
       - name: "run test"
         run: yarn test:action
         env:
