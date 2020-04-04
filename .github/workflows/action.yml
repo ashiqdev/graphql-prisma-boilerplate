@@ -2,7 +2,7 @@ name: "Github action Test"
 on:
   push:
     branches:
-      - auth
+      - wait-for-prisma
 jobs:
   test:
     runs-on: ubuntu-latest
