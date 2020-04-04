@@ -1,16 +1,15 @@
 const chai = require("chai");
+const { expect } = chai;
 const chaiHttp = require("chai-http");
 chai.use(require("chai-as-promised"));
 
-chai.use(chaiHttp);
+// chai.use(chaiHttp);
 
 const dotenv = require("dotenv");
 const path = require("path");
 const envPath = path.resolve("./.env");
 
 dotenv.config({ path: envPath });
-
-chai.expect();
 
 const { signin } = require("../../resolvers/user/mutation");
 const {
