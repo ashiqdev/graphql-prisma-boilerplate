@@ -25,21 +25,21 @@ const multiplyBy2 = numbers => numbers.map(number => number * 2);
 const result = multiplyBy2([1, 2, 3, 4, 5]);
 
 describe("Test Authentication", () => {
-  // it("should sign in the user", () => {
-  //   const args = {
-  //     email: process.env.EMAIL,
-  //     password: process.env.PASSWORD
-  //   };
+  it("should sign in the user", () => {
+    const args = {
+      email: process.env.EMAIL,
+      password: process.env.PASSWORD
+    };
 
-  //   return signin(null, args).should.be.fulfilled;
-  // });
-
-  it("check if prisma server is open or not", done => {
-    request
-      .get("/")
-      .expect(400)
-      .end((err, res) => done());
+    return signin(null, args).should.be.fulfilled;
   });
+
+  // it("check if prisma server is open or not", done => {
+  //   request
+  //     .get("/")
+  //     .expect(400)
+  //     .end((err, res) => done());
+  // });
 
   it("should be an array", () => {
     expect(["1", "2", "3", "4", "5"])
