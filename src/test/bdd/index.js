@@ -11,7 +11,7 @@ const envPath = path.resolve("./.env");
 
 dotenv.config({ path: envPath });
 
-// chai.should();
+chai.should();
 
 const { signin } = require("../../resolvers/user/mutation");
 const {
