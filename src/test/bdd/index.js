@@ -37,7 +37,7 @@ describe("Test Authentication", () => {
   it("check if prisma server is open or not", done => {
     request
       .get("/")
-      .expect(200)
+      .expect(400)
       .end((err, res) => done());
   });
 
