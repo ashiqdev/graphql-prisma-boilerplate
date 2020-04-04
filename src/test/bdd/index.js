@@ -16,9 +16,7 @@ const url = "http://localhost:4466";
 const request = require("supertest")(url);
 
 const { signin } = require("../../resolvers/user/mutation");
-const {
-	prisma: { deleteManyUsers },
-} = require("../../../src/generated/prisma-client");
+const { prisma } = require("../../../src/generated/prisma-client");
 
 // multiply array items by 2
 const multiplyBy2 = (numbers) => numbers.map((number) => number * 2);
