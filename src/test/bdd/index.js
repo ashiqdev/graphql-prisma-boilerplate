@@ -37,7 +37,7 @@ describe("Test Authentication", () => {
       .request("http://localhost:4466")
       .get("/")
       .end((err, res) => {
-        res.should.have.status(200);
+        res.statusCode.should.equal(200);
         done();
       });
   });
