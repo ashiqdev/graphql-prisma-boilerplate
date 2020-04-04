@@ -18,8 +18,8 @@ jobs:
         run: docker-compose -f docker-compose.yml up -d
       - name: "deploy prisma"
         run: yarn deploy
-      - name: "seed database"
-        run: yarn seed:db
+      - name: "run test"
+        run: yarn test:action
         env:
           PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
           PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
