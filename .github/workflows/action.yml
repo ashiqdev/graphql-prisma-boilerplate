@@ -17,7 +17,7 @@ jobs:
       - name: "up docker-compose file"
         run: docker-compose -f docker-compose.yml up -d
       - name: "deploy prisma"
-        run: wait-port 4466 && yarn deploy
+        run: wait-port 4465 && yarn deploy
       - name: "run test"
         run: yarn test:action
         env:
