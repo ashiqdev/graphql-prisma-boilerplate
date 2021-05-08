@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "graphql-tag": "^2.10.1",
     "graphql-yoga": "^1.18.3",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "ical-generator": "^1.9.2",
     "ics": "^2.18.0",
