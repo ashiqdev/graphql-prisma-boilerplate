@@ -30,7 +30,7 @@
     "ics": "^2.18.0",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^7.1.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "nodemailer": "^6.4.2",
     "nodemon": "^2.0.2",
     "prisma-client-lib": "^1.34.10",
